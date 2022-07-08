@@ -19,14 +19,14 @@ TARGET_ENABLE_BLUR := true
 
 # gapps build flag, if not defined build type is vanilla
 # GAPPS package is similar to core gapps
-WITH_GAPPS := true
+WITH_GMS := true
 
 # maintainer flag
 RICE_MAINTAINER := xscar
 RICE_OFFICIAL := true
 RICE_DEVICE := mojito
 
-# Quick Tap 
+# Quick Tap `
 TARGET_SUPPORTS_QUICK_TAP := true
 
 #Face unlock 
