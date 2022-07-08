@@ -11,15 +11,32 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from mojito device
 $(call inherit-product, device/xiaomi/mojito/device.mk)
 
-# Inherit some common PixelExperience stuff
-TARGET_USES_AOSP_RECOVERY := true
-TARGET_BOOT_ANIMATION_RES := 1080
+# Inherit some RiceDroid stuffs
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+# disable/enable blur support, default is false
+TARGET_ENABLE_BLUR := true
+
+# gapps build flag, if not defined build type is vanilla
+# GAPPS package is similar to core gapps
+WITH_GAPPS := true
+
+# maintainer flag
+RICE_MAINTAINER := xscar
+RICE_OFFICIAL := true
+RICE_DEVICE := mojito
+
+# Quick Tap 
 TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+#Face unlock 
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_mojito
+PRODUCT_NAME := lineage_mojito
 PRODUCT_DEVICE := mojito
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 10
