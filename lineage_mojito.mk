@@ -15,14 +15,16 @@ $(call inherit-product, device/xiaomi/mojito/device.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # disable/enable blur support, default is false
-TARGET_ENABLE_BLUR := true
+TARGET_ENABLE_BLUR := false
 
 # gapps build flag, if not defined build type is vanilla
 # GAPPS package is similar to core gapps
-WITH_GAPPS := true
+WITH_GMS := true
 
 # maintainer flag
 RICE_MAINTAINER := xscar
+RICE_OFFICIAL := true
+RICE_DEVICE := mojito
 
 # Quick Tap 
 TARGET_SUPPORTS_QUICK_TAP := true
